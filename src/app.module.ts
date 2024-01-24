@@ -1,4 +1,4 @@
-import { HttpService, Module } from '@nestjs/common';
+import { HttpModule, HttpService, Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
@@ -9,7 +9,7 @@ const API_KEY = '123456';
 const API_KEY_PROD = '456789';
 
 @Module({
-  imports: [UsersModule, ProductsModule],
+  imports: [UsersModule, ProductsModule , HttpModule],
   controllers: [AppController],
   providers: [AppService,
   {
